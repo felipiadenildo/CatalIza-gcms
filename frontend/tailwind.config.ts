@@ -1,27 +1,46 @@
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+export default {
+  darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
-      colors: {
-        canvas:    "#0d1117",
-        surface1:  "#161b22",
-        surface2:  "#21262d",
-        border:    "#30363d",
-        text:      "#e6edf3",
-        muted:     "#8b949e",
-        accent:    "#58a6ff",
-        success:   "#3fb950",
-        warning:   "#d29922",
-        danger:    "#f85149",
-      },
       fontFamily: {
-        mono: ["JetBrains Mono", "Fira Code", "monospace"],
+        mono: ["JetBrains Mono", "Fira Code", "ui-monospace", "monospace"],
+      },
+      colors: {
+        border:      "hsl(var(--border))",
+        input:       "hsl(var(--input))",
+        ring:        "hsl(var(--ring))",
+        background:  "hsl(var(--background))",
+        foreground:  "hsl(var(--foreground))",
+        primary: {
+          DEFAULT:    "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT:    "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        muted: {
+          DEFAULT:    "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT:    "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        card: {
+          DEFAULT:    "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },
   plugins: [],
-};
-
-export default config;
+} satisfies Config;
