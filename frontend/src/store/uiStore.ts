@@ -5,7 +5,7 @@ import type { TabId } from "@/types/ui";
 interface UIState {
   activeTab:        TabId;
   sidebarCollapsed: boolean;
-  theme:            "dark" | "light";
+  theme:            "light" | "dark";
 }
 
 interface UIActions {
